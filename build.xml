@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project 
+	name="nterfaces-daily-java-5-16"
+	default="build"
+>
+	<!-- PROPERTIES -->
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+
+	<!-- CLASS PATH -->
+	<path id="master-classpath">
+		<fileset dir="${src.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- CREATE DIRECTORIES -->
+	<target name="initialize">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<!-- COMPILE CODE -->
+	<target name="build" depends="initialize">
+		<javac destdir="${build.dir}" debug="${true}" failonerror="true">
+			<src path="${src.dir}" />
+			<classpath refid="master-classpath" />
+		</javac>
+	</target>
+
+
+	<target name="clean">
+		<delete>
+			<fileset dir="${build.dir}">
+				<include name="**/*.class" />
+			</fileset>
+		</delete>
+	</target>
+
+</project>
