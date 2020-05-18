@@ -10,6 +10,10 @@ I'm creating a small Java project each day to help me learn Java. These aren't r
 
 ### Points of Interest
 
++ It was an interesting problem storing IO calls, and a Queue with my own `IoWrapper` class did, at least in my opionion, a great job.
++ The harder problem though was how to handle the user input since you'd have to make the main thread wait for inputs, which inheritely is tricky on multi-threaded projects. But with the use of the `Consumer<T>` interface and using a static Queue, I think it has all the functionality if it wasn't implemented in its own thread.
++ This project was also the worst of all the daily Java projects I've done so far with reguards to lack of planning, while I had an idea of how to handle storing IO calls, I figured out how to handle the user input on the fly, requiring more than one rewrite of a noteable portion of my code. I think from this point forward I'll have to spend more time designing the code before I jump into writing it.
+
 ### Compiling
 
 There is a build file using ant, which can be run by `$ant` and running `Parent.class` in `/build`, or you can go into `./src` and compile it by hand
