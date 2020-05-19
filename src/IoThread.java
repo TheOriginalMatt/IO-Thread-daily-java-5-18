@@ -5,14 +5,14 @@ import java.util.function.*;
 
 public class IoThread implements Runnable {
 
-	private LinkedList<IoWrapper> IoQueue = new LinkedList<IoWrapper>();
+	private static LinkedList<IoWrapper> IoQueue = new LinkedList<IoWrapper>();
 
 	private Scanner inputScanner = new Scanner(System.in);
 
-	private Thread t;
+	private static Thread t;
 	private String threadName = "IOThread";
 
-	private boolean run = true;
+	private static boolean run = true;
 
 	/**
 	* Handles displaying the output to the user and getting input from the user
