@@ -1,3 +1,5 @@
+package IoThread;
+
 import java.util.function.*;
 
 public class IoWrapper {
@@ -13,7 +15,7 @@ public class IoWrapper {
 	*@param consumer an implementation of java.util.function.Consumer{@literal <T>} whose .accept() function will be called on the user input
 	*
 	*/
-	IoWrapper(String text, Consumer<String> consumer) {
+	public IoWrapper(String text, Consumer<String> consumer) {
 		this.setDisplayText(text);
 		this.requireUserInput(true);
 		this.setConsumer(consumer);
@@ -25,7 +27,7 @@ public class IoWrapper {
 	*@param text the String to be printed to the screen
 	*
 	*/
-	IoWrapper(String text) {
+	public IoWrapper(String text) {
 		this.setDisplayText(text);
 		this.requireUserInput(false);
 	}
